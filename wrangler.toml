@@ -1,7 +1,7 @@
 # Cognitive Ergonomics for AI — cogergo.protocol-institute.org
-# Separate CF Pages project; root directory set to "cogergo" in CF dashboard.
+# CF Pages project "cogergo-site", Git-connected to Protocol-Institute/cogergo (push to main deploys).
 # D1 binding shares pi-members database with the main website project.
-name = "cogergo"
+name = "cogergo-site"
 pages_build_output_dir = "."
 compatibility_date = "2025-01-01"
 

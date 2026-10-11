@@ -37,11 +37,13 @@ These are the dependencies to keep in mind when changing anything here:
 
 ## Deploying
 
-The Pages project must be connected to this repository (Cloudflare dashboard →
-Workers & Pages → cogergo → Settings → Builds) with no build command and output
-directory `.`. Until then, deploy by hand from a clean export of a commit, so
-that nothing untracked is published:
+**Push to `main` deploys.** The Cloudflare Pages project `cogergo-site` is
+connected to this repository (no build command, output directory `.`), and
+other branches get preview deployments. It reads `wrangler.toml` for the D1
+binding, so the `name` there must stay `cogergo-site`.
 
-```bash
-tmp=$(mktemp -d) && git archive HEAD | tar -x -C "$tmp" && npx wrangler pages deploy "$tmp" --project-name cogergo --branch main
-```
+Pages publishes every file in the repo except `functions/`, so anything
+committed here is public at the site, even if it isn't linked.
+
+(The older `cogergo` Pages project was upload-only, with no Git connection, and
+is retired.)
