@@ -202,7 +202,7 @@
       ? '<p class="no-comments">No comments yet.</p>'
       : comments.map(function(c) {
           return '<div class="comment-item">' +
-            '<div class="comment-author"><a href="https://protocol-institute.org/members/' + escHtml(c.member_slug) + '">' + escHtml(c.member_name) + '</a>' +
+            '<div class="comment-author"><a href="https://protocol-institute.org/members/profile?slug=' + encodeURIComponent(c.member_slug) + '">' + escHtml(c.member_name) + '</a>' +
             '<span class="comment-date">' + fmtDate(c.created_at) + '</span></div>' +
             '<div class="comment-body md">' + PIMarkdown.html(c.body) + '</div>' +
           '</div>';
